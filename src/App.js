@@ -1,13 +1,12 @@
-import React from "react";
+import React from 'react'
+import Moviecard from './Moviecard'
 
+export const App = () => {
+  return (
+    <div>
+      
+      <Moviecard/>
 
-export class App extends React.Component{
-
-  render(){
-    return <h1>Class component</h1>
-  }
-
+    </div>
+  )
 }
-
-
-
