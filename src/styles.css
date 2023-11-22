@@ -8,7 +8,7 @@ body {
   background: #f1f1f1;
 }
 .main {
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
   margin-top: 30px;
   padding: 0 20px;
@@ -33,7 +33,7 @@ body {
   padding: 5px
 }
 .movie-card .left img {
-  height: 200px;
+  height: 250px;
   
 }
 .movie-card .right {

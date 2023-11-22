@@ -52,14 +52,14 @@ export default class Moviecard extends Component{
 
     render(){
 
-        const {title,plot,price,rating,stars,fav,isInCart} =this.props.movies;
+        const {title,plot,price,rating,stars,fav,isInCart,poster} =this.props.movies;
 
 
         return(
             <div className='main'>
                 <div className='movie-card'>
                     <div className='left'>
-                        <img src="https://m.media-amazon.com/images/M/MV5BNDYxNjQyMjAtNTdiOS00NGYwLWFmNTAtNThmYjU5ZGI2YTI1XkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_.jpg" alt="Poster" />
+                        <img src={poster} alt="Poster" />
                     </div>
 
                     <div className='right'>
