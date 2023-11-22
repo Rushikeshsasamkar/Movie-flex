@@ -91,8 +91,8 @@ footer.starCount {
 
 
 .footer .str-btn {
-  width: 7px;
-  height: 7px
+  width: 15px;
+  height: 15px
 }
 .footer button {
   font-size: 15px;
@@ -116,6 +116,14 @@ footer.starCount {
       margin: 5px;
     
 }
+.remove-cart-btn {
+
+  background-color: #db2828;
+  color: #fff;
+  margin: 5px;
+  border-radius: 10px;
+}
+
 .unfavourite-btn {
   background-color: #db2828;
   color: #fff;

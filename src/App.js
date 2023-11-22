@@ -1,11 +1,11 @@
 import React from 'react'
-import Moviecard from './Moviecard'
+import MovieList from './MovieList'
 
 export const App = () => {
   return (
     <div>
       
-      <Moviecard/>
+      <MovieList/>
 
     </div>
   )
