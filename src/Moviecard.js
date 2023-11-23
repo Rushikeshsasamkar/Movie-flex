@@ -3,56 +3,10 @@ import './styles.css';
 
 export default class Moviecard extends Component{
 
-   
-
-    addStars = ()=>{
-         if(this.state.stars < 5){
-            // first form of this.setState
-            // this.setState({
-               
-            //     stars: this.state.stars+0.5,
-            // })
-
-            // Second form of setState (Recommeneded)
-            this.setState((prevState)=>{
-                return{
-                    stars:prevState.stars+0.5
-                }
-            })
-        }
-
-            // this.state.stars+=0.5;
-            // console.log("this",this.state.stars);
-
-        
-    }
-
-
-    decStars = ()=>{
-         if(this.state.stars > 0){
-            this.setState((prevState)=>{
-                return{
-                    stars:prevState.stars-0.5
-                }
-            });
-        }
-    }
-
-    handleFav =()=>{
-        this.setState({
-            fav: !this.state.fav
-        })
-    }
-
-       handleisInCart =()=>{
-        this.setState({
-            isInCart: !this.state.isInCart
-        })
-    }
 
     render(){
-
-        const {title,plot,price,rating,stars,fav,isInCart,poster} =this.props.movies;
+        const {addStars,movies,decStars} = this.props;
+        const {title,plot,price,rating,star,fav,isInCart,poster} =this.props.movies;
 
 
         return(
@@ -74,7 +28,7 @@ export default class Moviecard extends Component{
                             <div className='star-dis'>
                                 
                                     <img src="https://cdn-icons-png.flaticon.com/128/56/56889.png"
-                                    alt="decrease" onClick={this.decStars}
+                                    alt="decrease" onClick={()=>{decStars(movies)}}
                                      className='str-btn'/>
                                     &nbsp;
                                     <img 
@@ -86,9 +40,9 @@ export default class Moviecard extends Component{
                                     &nbsp; 
                                      <img src="https://cdn-icons-png.flaticon.com/128/3524/3524388.png"
                                      alt="increase"
-                                     className='str-btn' onClick={this.addStars}/>
+                                     className='str-btn' onClick={()=>{addStars(movies)}}/>
 
-                                     <span>  {stars}</span>
+                                     <span>  {star}</span>
 
                             </div>
                              {/* {fav?

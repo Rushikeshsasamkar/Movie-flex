@@ -50,6 +50,47 @@ export default class MovieList extends Component{
         }
         // this.addStars = this.addStars.bind(this);
     }
+    
+    addStars = (movie)=>{
+      const {movies} = this.state;
+      const mid = movies.indexOf(movie);
+      if(movies[mid].star>=5){
+        return;
+      }
+      movies[mid].star+=0.5;
+  
+      this.setState({
+          movies:movies
+
+        })
+    
+    }
+
+    decStars = (movie)=>{
+        const {movies} = this.state;
+        const mid = movies.indexOf(movie);
+        if(movies[mid].star<=0){
+          return;
+        }
+        movies[mid].star-=0.5;
+        this.setState({
+          movies:movies
+        })
+    }
+
+    handleFav =()=>{
+        this.setState({
+            fav: !this.state.fav
+        })
+    }
+
+       handleisInCart =()=>{
+        this.setState({
+            isInCart: !this.state.isInCart
+        })
+    }
+
+
 
     
     render(){
@@ -59,7 +100,7 @@ export default class MovieList extends Component{
            <div className="main">
                 {movies.map((movie,index) => (
                 <Moviecard movies = {movie}
-                            key = {index}/>
+                            key = {index} addStars={this.addStars} decStars={this.decStars}/>
 
             ))}              
             </div>
