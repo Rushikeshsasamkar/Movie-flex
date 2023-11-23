@@ -5,7 +5,7 @@ export default class Moviecard extends Component{
 
 
     render(){
-        const {addStars,movies,decStars} = this.props;
+        const {addStars,movies,decStars,handleFav,handleIsInCart} = this.props;
         const {title,plot,price,rating,star,fav,isInCart,poster} =this.props.movies;
 
 
@@ -52,10 +52,10 @@ export default class Moviecard extends Component{
                             } */}
 
                             <button className={fav?'unfavourite-btn': 'favourite-btn'}
-                             onClick={this.handleFav}>{fav?'Un-Favourite': 'Favourite'}</button>
+                             onClick={()=>{handleFav(movies)}}>{fav?'Un-Favourite': 'Favourite'}</button>
 
                             <button className={isInCart?'cart-btn':'remove-cart-btn'} 
-                             onClick={this.handleisInCart}>
+                             onClick={()=>{handleIsInCart(movies)}}>
                              {isInCart?'Add to Cart':'Remove from Cart'}</button>
 
                         </div>

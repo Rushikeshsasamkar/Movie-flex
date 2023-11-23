@@ -78,15 +78,21 @@ export default class MovieList extends Component{
         })
     }
 
-    handleFav =()=>{
+    handleFav =(movie)=>{
+      const {movies} = this.state;
+      const mid = movies.indexOf(movie);
+      movies[mid].fav = !movies[mid].fav;
         this.setState({
-            fav: !this.state.fav
+            movies
         })
     }
 
-       handleisInCart =()=>{
+       handleIsInCart =(movie)=>{
+        const {movies} =this.state;
+        const mid = movies.indexOf(movie);
+        movies[mid].isInCart = !movies[mid].isInCart
         this.setState({
-            isInCart: !this.state.isInCart
+            movies
         })
     }
 
@@ -100,7 +106,11 @@ export default class MovieList extends Component{
            <div className="main">
                 {movies.map((movie,index) => (
                 <Moviecard movies = {movie}
-                            key = {index} addStars={this.addStars} decStars={this.decStars}/>
+                            key = {index} addStars={this.addStars} 
+                            handleFav = {this.handleFav}
+                            decStars={this.decStars}
+                            handleIsInCart={this.handleIsInCart}
+                            />
 
             ))}              
             </div>
