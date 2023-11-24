@@ -1,12 +1,10 @@
-import {Component} from "react";
 import './styles.css';
 
-export default class Moviecard extends Component{
+export default function Moviecard(props){
 
 
-    render(){
-        const {addStars,movies,decStars,handleFav,handleIsInCart} = this.props;
-        const {title,plot,price,rating,star,fav,isInCart,poster} =this.props.movies;
+        const {addStars,movies,decStars,handleFav,handleIsInCart} = props;
+        const {title,plot,price,rating,star,fav,isInCart,poster} =props.movies;
 
 
         return(
@@ -68,4 +66,3 @@ export default class Moviecard extends Component{
         )
     }
 
-}
